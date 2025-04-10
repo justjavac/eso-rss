@@ -31,11 +31,11 @@ export async function news() {
       .substring(0, 10)
       .replaceAll("/", "-");
     const description = $("p", news).text();
-    // const image = $("img", news).data("lazy-src") as string;
+    const image = $("img", news).data("lazy-src") as string;
     const tags = $("p.date a", news).map((_, tag) => $(tag).text()).get();
     feed.item({
       title,
-      description,
+      description: `<img src="${image}" alt="${title}"/><br>${description}`,
       url,
       categories: tags,
       date: new Date(pubDate).toUTCString(),
