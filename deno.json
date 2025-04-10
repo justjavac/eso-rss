@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --allow-env --watch main.ts"
+  },
+  "imports": {
+    "cheerio": "npm:cheerio@^1.0.0",
+    "rss": "npm:rss@^1.2.2"
+  }
+}
